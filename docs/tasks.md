@@ -16,9 +16,7 @@ This document breaks down the project implementation into verifiable phases and 
 -   [x] **Production**: Create a serverless PostgreSQL database project (e.g., on Neon).
 -   [x] **Production**: Register OAuth applications for Outlook and Pipedrive in their respective developer portals. Note the Client IDs and Secrets.
 
----
-
-## Phase 1: The "Walking Skeleton" - Auth & Deployment
+----- ## Phase 1: The "Walking Skeleton" - Auth & Deployment
 
 **Goal**: Get a minimal, authenticated application deployed to prove the end-to-end pipeline works.
 
@@ -47,10 +45,10 @@ This document breaks down the project implementation into verifiable phases and 
 
 ### Local Environment
 
--   [ ] **Backend**: Define the SQLAlchemy models for `User` and `Credential` in `backend/app/models/database.py`.
--   [ ] **Backend**: Set up Alembic to manage database migrations.
--   [ ] **Backend**: Create an initial migration (`alembic revision --autogenerate`) to create the tables.
--   [ ] **Backend**: Run `alembic upgrade head` locally (via `docker-compose`) to apply the migration to the local database.
+-   [x] **Backend**: Define the SQLAlchemy models for `User` and `Credential` in `backend/app/models/database.py`.
+-   [x] **Backend**: Set up Alembic to manage database migrations.
+-   [x] **Backend**: Create an initial migration (`alembic revision --autogenerate`) to create the tables.
+-   [x] **Backend**: Run `alembic upgrade head` locally (via `docker-compose`) to apply the migration to the local database.
 
 ### Production Environment
 
