@@ -8,13 +8,13 @@ This document breaks down the project implementation into verifiable phases and 
 
 **Goal**: Prepare the cloud environment and local project structure.
 
--   [ ] **Local**: Initialize a Git repository.
--   [ ] **Local**: Create the top-level directory structure (`backend/`, `frontend/`, `docs/`, `scripts/`).
--   [ ] **Production**: Create a new project in the Google Cloud Console.
--   [ ] **Production**: Link the GCP project to a new Firebase project.
--   [ ] **Production**: Enable required GCP APIs: Cloud Run, Secret Manager, Artifact Registry, Cloud Build.
--   [ ] **Production**: Create a serverless PostgreSQL database project (e.g., on Neon).
--   [ ] **Production**: Register OAuth applications for Outlook and Pipedrive in their respective developer portals. Note the Client IDs and Secrets.
+-   [x] **Local**: Initialize a Git repository.
+-   [x] **Local**: Create the top-level directory structure (`backend/`, `frontend/`, `docs/`, `scripts/`).
+-   [x] **Production**: Create a new project in the Google Cloud Console.
+-   [x] **Production**: Link the GCP project to a new Firebase project.
+-   [x] **Production**: Enable required GCP APIs: Cloud Run, Secret Manager, Artifact Registry, Cloud Build.
+-   [x] **Production**: Create a serverless PostgreSQL database project (e.g., on Neon).
+-   [x] **Production**: Register OAuth applications for Outlook and Pipedrive in their respective developer portals. Note the Client IDs and Secrets.
 
 ---
 
@@ -24,20 +24,20 @@ This document breaks down the project implementation into verifiable phases and 
 
 ### Local Environment
 
--   [ ] **Backend**: Create a basic FastAPI app with a single protected endpoint (`/api/profile`).
--   [ ] **Backend**: Implement the `firebase_auth.py` dependency to verify tokens.
--   [ ] **Frontend**: Create a basic Next.js app.
--   [ ] **Frontend**: Implement the Firebase SDK and `AuthProvider` to manage user login state.
--   [ ] **Frontend**: Create a simple login page and a profile page that calls the backend's protected endpoint.
--   [ ] **Local**: Create a `docker-compose.yml` file to run the backend and a local PostgreSQL database.
+-   [x] **Backend**: Create a basic FastAPI app with a single protected endpoint (`/api/profile`).
+-   [x] **Backend**: Implement the `firebase_auth.py` dependency to verify tokens.
+-   [x] **Frontend**: Create a basic Next.js app.
+-   [x] **Frontend**: Implement the Firebase SDK and `AuthProvider` to manage user login state.
+-   [x] **Frontend**: Create a simple login page and a profile page that calls the backend's protected endpoint.
+-   [x] **Local**: Create a `docker-compose.yml` file to run the backend and a local PostgreSQL database.
 
 ### Production Environment
 
--   [ ] **Production**: Create secrets in Google Secret Manager for `CREDENTIAL_ENCRYPTION_KEY` and `GOOGLE_APPLICATION_CREDENTIALS`.
--   [ ] **Production**: Add the Neon database connection string as a secret named `DATABASE_URL`.
--   [ ] **Production**: Configure Firebase Authentication in the console (e.g., enable Google Sign-In).
--   [ ] **Production**: Run the `scripts/deploy.sh` script for the first time.
--   [ ] **Verification**: Log in to the deployed production frontend and confirm that the profile page successfully fetches data from the backend.
+-   [x] **Production**: Create secrets in Google Secret Manager for `CREDENTIAL_ENCRYPTION_KEY` and `GOOGLE_APPLICATION_CREDENTIALS`.
+-   [x] **Production**: Add the Neon database connection string as a secret named `DATABASE_URL`.
+-   [x] **Production**: Configure Firebase Authentication in the console (e.g., enable Google Sign-In).
+-   [x] **Production**: Run the `scripts/deploy.sh` script for the first time.
+-   [x] **Verification**: Log in to the deployed production frontend and confirm that the profile page successfully fetches data from the backend.
 
 ---
 
