@@ -64,6 +64,8 @@ Database migrations are handled by a startup script (`scripts/start.sh`) within 
 
 ## 4. Core Design Principles
 
+-   **UI/UX Strategy**: The frontend will leverage **Tailwind CSS** for utility-first styling and **Shadcn UI** components for pre-built, accessible, and customizable UI elements. This approach ensures a modern, consistent, and efficient development of the user interface.
+
 -   **Security First**:
     -   Never store email content. Process in-memory and discard.
     -   Encrypt all sensitive credentials (service tokens, API keys) at rest.

@@ -52,10 +52,10 @@ This document breaks down the project implementation into verifiable phases and 
 
 ### Production Environment
 
--   [ ] **Backend**: Implement the `scripts/start.sh` script to run `alembic upgrade head` before the server starts.
--   [ ] **Backend**: Update the `Dockerfile` to use `scripts/start.sh` as its `CMD`.
--   [ ] **Production**: Deploy the updated application.
--   [ ] **Verification**: Check the Cloud Run logs to confirm the database migration ran successfully on startup.
+-   [x] **Backend**: Implement the `scripts/start.sh` script to run `alembic upgrade head` before the server starts.
+-   [x] **Backend**: Update the `Dockerfile` to use `scripts/start.sh` as its `CMD`.
+-   [x] **Production**: Deploy the updated application.
+-   [x] **Verification**: Check the Cloud Run logs to confirm the database migration ran successfully on startup.
 
 ---
 
