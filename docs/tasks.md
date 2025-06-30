@@ -16,7 +16,9 @@ This document breaks down the project implementation into verifiable phases and 
 -   [x] **Production**: Create a serverless PostgreSQL database project (e.g., on Neon).
 -   [x] **Production**: Register OAuth applications for Outlook and Pipedrive in their respective developer portals. Note the Client IDs and Secrets.
 
------ ## Phase 1: The "Walking Skeleton" - Auth & Deployment
+---
+
+## Phase 1: The "Walking Skeleton" - Auth & Deployment
 
 **Goal**: Get a minimal, authenticated application deployed to prove the end-to-end pipeline works.
 
@@ -59,16 +61,20 @@ This document breaks down the project implementation into verifiable phases and 
 
 ---
 
-## Phase 3: Service Authentication (OAuth Flows)
+## Phase 3: Service Authentication (OAuth Flows) ✅ COMPLETED
 
 **Goal**: Allow users to securely connect their external service accounts.
 
 ### Local Environment
 
--   [ ] **Backend**: Implement the `encryption.py` service for encrypting/decrypting tokens.
--   [ ] **Backend**: Create API endpoints to initiate the OAuth flows for Outlook and Pipedrive (e.g., `/api/auth/connect/outlook`).
--   [ ] **Backend**: Create the callback endpoints (`/api/auth/callback/outlook`) to handle the response, exchange the code for tokens, encrypt them, and save them to the database.
--   [ ] **Frontend**: Build the UI components (e.g., "Connect" buttons) that link to the backend's OAuth initiation endpoints.
+-   [x] **Backend**: Implement the `encryption.py` service for encrypting/decrypting tokens.
+-   [x] **Backend**: Create API endpoints to initiate the OAuth flows for Outlook and Pipedrive (e.g., `/api/auth/connect/outlook`).
+-   [x] **Backend**: Create the callback endpoints (`/api/auth/callback/outlook`) to handle the response, exchange the code for tokens, encrypt them, and save them to the database.
+-   [x] **Frontend**: Build the UI components (e.g., "Connect" buttons) that link to the backend's OAuth initiation endpoints.
+-   [x] **Backend**: Implement session-based OAuth flow with proper user identification.
+-   [x] **Backend**: Add CORS middleware for local development.
+-   [x] **Backend**: Create test endpoints to verify API connectivity (e.g., `/api/test-pipedrive`).
+-   [x] **Verification**: Successfully connect Pipedrive account and verify API calls work.
 
 ### Production Environment
 
@@ -79,7 +85,7 @@ This document breaks down the project implementation into verifiable phases and 
 
 ---
 
-## Phase 4: Core Logic (Email to Deal)
+## Phase 4: Core Logic (Email to Deal) 🚀 READY TO START
 
 **Goal**: Implement the primary business logic of the application.
 
