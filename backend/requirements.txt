@@ -2,3 +2,10 @@ fastapi
 uvicorn
 python-dotenv
 firebase-admin
+python-multipart
+SQLAlchemy
+psycopg2-binary
+pydantic-settings
+alembic
+pytest
+cryptography
