@@ -9,3 +9,4 @@ pydantic-settings
 alembic
 pytest
 cryptography
+httpx

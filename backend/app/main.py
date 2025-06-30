@@ -1,8 +1,10 @@
 from fastapi import FastAPI, Depends
 from app.auth.firebase_auth import verify_token
+from app.api.oauth import router as oauth_router
 
 app = FastAPI()
 
+app.include_router(oauth_router, prefix="/api/auth")
 
 @app.get("/api")
 def read_root():
