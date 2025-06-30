@@ -60,6 +60,18 @@ export default function ProfilePage() {
       ) : (
         <p>Loading profile...</p>
       )}
+
+      <h2>Connect Services</h2>
+      <div>
+        <button onClick={() => window.location.href = `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/connect/outlook`}>
+          Connect Outlook
+        </button>
+      </div>
+      <div>
+        <button onClick={() => window.location.href = `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/connect/pipedrive`}>
+          Connect Pipedrive
+        </button>
+      </div>
     </div>
   );
 }

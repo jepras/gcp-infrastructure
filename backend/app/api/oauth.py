@@ -100,7 +100,8 @@ async def connect_pipedrive():
     return RedirectResponse(auth_url)
 
 @router.get("/callback/pipedrive")
-async def pipedrive_callback(code: str, db: Session = Depends(get_db)):
+async def pipedrive_callback(code: str, db: Session = Depends(get_db), user: dict = Depends(verify_token)):
+    logger.info(f"Pipedrive callback received with code: {code[:10]}...")
     if not PIPEDRIVE_CLIENT_SECRET:
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Pipedrive Client Secret not configured")
 
