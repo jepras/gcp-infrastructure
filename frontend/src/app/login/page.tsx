@@ -4,10 +4,17 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { useAuth } from "@/lib/AuthProvider";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function LoginPage() {
   const { user, loading } = useAuth();
   const router = useRouter();
+
+  useEffect(() => {
+    if (user) {
+      router.push("/profile");
+    }
+  }, [user, router]);
 
   const handleSignIn = async () => {
     const provider = new GoogleAuthProvider();
@@ -20,11 +27,6 @@ export default function LoginPage() {
 
   if (loading) {
     return <div>Loading...</div>;
-  }
-
-  if (user) {
-    router.push("/profile");
-    return null;
   }
 
   return (

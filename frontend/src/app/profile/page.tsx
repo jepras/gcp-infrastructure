@@ -3,9 +3,14 @@
 import { useAuth } from "@/lib/AuthProvider";
 import { useEffect, useState } from "react";
 
+interface ProfileData {
+  message: string;
+  user_id: string;
+}
+
 export default function ProfilePage() {
   const { user, loading } = useAuth();
-  const [profile, setProfile] = useState<any>(null);
+  const [profile, setProfile] = useState<ProfileData | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -24,10 +29,14 @@ export default function ProfilePage() {
           throw new Error("Failed to fetch profile");
         }
 
-        const data = await response.json();
+        const data: ProfileData = await response.json();
         setProfile(data);
-      } catch (err: any) {
-        setError(err.message);
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("An unknown error occurred");
+        }
       }
     };
 
